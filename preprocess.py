@@ -10,8 +10,10 @@ NAMESPACES = {
     "xml": "http://www.w3.org/XML/1998/namespace",
 }
 
+DIR = "./OpenGreekAndLatin/First1KGreek/data"
+
 def main():
-    TEXTS = [f"./data/{f}" for f in os.listdir("./data") if f.endswith(".xml")]
+    TEXTS = [f"{DIR}/{f}" for f in os.listdir(DIR) if f.endswith(".xml")]
     
     urns = []
     raw_xmls = []
@@ -44,7 +46,7 @@ def main():
 
     df = pl.DataFrame(d)
 
-    df.write_parquet("./plato-aristotle.parquet")
+    df.write_parquet("./1st1KGreek_aristotle.parquet")
 
 if __name__ == "__main__":
     main()
