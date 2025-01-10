@@ -44,7 +44,7 @@ def main():
 
     df = pl.DataFrame(d)
 
-    df.write_parquet("./aristotle.parquet")
+    df.write_parquet("./plato-aristotle.parquet")
 
 if __name__ == "__main__":
     main()
